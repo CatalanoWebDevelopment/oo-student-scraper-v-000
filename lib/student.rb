@@ -18,7 +18,9 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
-    @@all << attributes_hash
+    attributes_hash.each do |attribute|
+      attribute.send("#{k}=", v)
+    end
     self
   end
 
